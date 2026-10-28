@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tilla Threads — Handcrafted Punjabi Tilla Embroidery</title>
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+<link rel="manifest" href="./site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FAF6EF;
+    --beige:#EFE6D6;
+    --beige-deep:#E4D6BE;
+    --maroon:#591622;
+    --maroon-deep:#3E0F17;
+    --gold:#AD8A4E;
+    --gold-light:#D6BD8A;
+    --ink:#2A2118;
+    --ink-soft:#5C5348;
+    --hair:rgba(42,33,24,0.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.disp{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+  .eyebrow{
+    font-family:'Inter', sans-serif;
+    font-size:11px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1240px; margin:0 auto; padding:0 56px;}
+  img,svg{display:block;}
+  button{font-family:inherit; cursor:pointer;}
+
+  /* ---------- thread divider ---------- */
+  .thread{
+    width:100%; height:14px;
+  }
+
+  /* ---------- nav ---------- */
+  header.nav{
+    position:relative;
+    background:var(--ivory);
+    border-bottom:1px solid var(--hair);
+  }
+  .nav-inner{
+    max-width:1240px; margin:0 auto; padding:0 56px;
+    display:flex; align-items:center; justify-content:space-between;
+    height:88px;
+  }
+  .logo{display:flex; align-items:center; gap:12px;}
+  .logo-mark{width:30px; height:30px;}
+  .logo-word{font-family:'Fraunces', serif; font-size:22px; font-weight:500; letter-spacing:0.01em;}
+  .nav-links{display:flex; align-items:center; gap:40px;}
+  .nav-links a{font-size:13px; letter-spacing:0.04em; color:var(--ink); position:relative; padding:4px 0;}
+  .nav-links a::after{
+    content:''; position:absolute; left:0; bottom:-2px; width:0; height:1px; background:var(--gold);
+    transition:width .25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-icons{display:flex; align-items:center; gap:26px;}
+  .nav-icons svg{width:18px; height:18px; stroke:var(--ink);}
+  .cart-dot{position:relative;}
+  .cart-dot::after{
+    content:'2'; position:absolute; top:-7px; right:-9px; width:15px; height:15px;
+    background:var(--maroon); color:var(--ivory); font-size:9px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-weight:600;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg, var(--maroon-deep) 0%, var(--maroon) 55%, #4a1119 100%);
+    color:var(--ivory);
+    overflow:hidden;
+    min-height:640px;
+    display:flex; align-items:center;
+  }
+  .hero-pattern{position:absolute; inset:0; opacity:0.9;}
+  .hero-inner{
+    position:relative; z-index:2;
+    max-width:1240px; margin:0 auto; padding:120px 56px 100px;
+    width:100%;
+  }
+  .hero-eyebrow{
+    font-size:11px; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold-light);
+    font-weight:600; margin-bottom:26px;
+  }
+  .hero h1{
+    font-size:64px; line-height:1.08; color:var(--ivory); max-width:680px;
+    font-style:italic; font-weight:400;
+  }
+  .hero p{
+    margin-top:26px; font-size:17px; line-height:1.7; max-width:460px; color:#E8D9CE;
+    font-weight:300;
+  }
+  .hero-actions{display:flex; gap:18px; margin-top:44px;}
+  .btn-gold{
+    background:var(--gold); color:var(--maroon-deep); border:1px solid var(--gold);
+    padding:15px 32px; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600;
+    transition:opacity .2s ease;
+  }
+  .btn-gold:hover{opacity:0.88;}
+  .btn-outline{
+    background:transparent; color:var(--ivory); border:1px solid rgba(250,246,239,0.5);
+    padding:15px 32px; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; font-weight:500;
+    transition:border-color .2s ease;
+  }
+  .btn-outline:hover{border-color:var(--ivory);}
+
+  /* ---------- section shell ---------- */
+  section{padding:112px 0;}
+  .section-head{display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:56px;}
+  .section-head h2{font-size:36px; font-weight:500;}
+  .view-all{font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); border-bottom:1px solid var(--gold); padding-bottom:3px;}
+
+  /* ---------- collections ---------- */
+  .collections-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:22px;}
+  .coll-card{
+    position:relative; height:340px; overflow:hidden; background:var(--beige);
+    display:flex; align-items:flex-end;
+  }
+  .coll-card .art{position:absolute; inset:0;}
+  .coll-card .overlay{
+    position:relative; z-index:2; padding:26px 24px; width:100%;
+    display:flex; align-items:center; justify-content:space-between;
+    background:linear-gradient(0deg, rgba(20,10,8,0.55) 0%, rgba(20,10,8,0) 100%);
+  }
+  .coll-card h3{color:var(--ivory); font-size:19px; font-weight:500; font-style:italic;}
+  .coll-card .arrow{
+    width:34px; height:34px; border:1px solid rgba(250,246,239,0.6); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .coll-card .arrow svg{width:14px; height:14px; stroke:var(--ivory);}
+
+  /* ---------- products ---------- */
+  .products-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:28px;}
+  .prod-card{display:flex; flex-direction:column;}
+  .prod-image{
+    position:relative; height:300px; background:var(--beige);
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
+    margin-bottom:18px;
+  }
+  .prod-image .wish{
+    position:absolute; top:14px; right:14px; width:32px; height:32px; border-radius:50%;
+    background:rgba(250,246,239,0.9); display:flex; align-items:center; justify-content:center;
+  }
+  .prod-image .wish svg{width:15px; height:15px; stroke:var(--maroon); fill:none;}
+  .prod-name{font-family:'Fraunces', serif; font-size:16px; font-weight:500; margin-bottom:4px;}
+  .prod-artisan{font-size:12px; color:var(--ink-soft); margin-bottom:10px;}
+  .prod-rating{display:flex; align-items:center; gap:5px; margin-bottom:10px;}
+  .prod-rating svg{width:12px; height:12px; fill:var(--gold);}
+  .prod-rating span{font-size:12px; color:var(--ink-soft);}
+  .prod-bottom{display:flex; align-items:center; justify-content:space-between; margin-top:auto;}
+  .prod-price{font-size:16px; font-weight:500; font-family:'Fraunces', serif;}
+  .add-cart{
+    font-size:11px; letter-spacing:0.06em; text-transform:uppercase; font-weight:600;
+    border:1px solid var(--ink); padding:9px 16px; background:transparent; color:var(--ink);
+    transition:all .2s ease;
+  }
+  .add-cart:hover{background:var(--ink); color:var(--ivory);}
+
+  /* ---------- artisans split ---------- */
+  .artisans{background:var(--beige);}
+  .artisans-inner{
+    max-width:1240px; margin:0 auto; padding:0 56px;
+    display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
+  }
+  .artisan-art{height:460px; position:relative;}
+  .artisan-copy .eyebrow{margin-bottom:18px;}
+  .artisan-copy h2{font-size:34px; line-height:1.2; margin-bottom:22px; max-width:420px;}
+  .artisan-copy p{font-size:16px; line-height:1.8; color:var(--ink-soft); max-width:420px; margin-bottom:34px;}
+  .btn-maroon{
+    background:var(--maroon); color:var(--ivory); border:1px solid var(--maroon);
+    padding:15px 32px; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600;
+  }
+
+  /* ---------- impact ---------- */
+  .impact{background:var(--maroon-deep); color:var(--ivory);}
+  .impact-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:40px; text-align:center;}
+  .impact-item svg{width:30px; height:30px; stroke:var(--gold-light); margin:0 auto 18px;}
+  .impact-num{font-family:'Fraunces', serif; font-size:38px; font-weight:500; color:var(--gold-light); font-style:italic;}
+  .impact-label{font-size:13px; letter-spacing:0.03em; color:#D8C7BC; margin-top:8px;}
+
+  /* ---------- heritage ---------- */
+  .heritage-inner{
+    max-width:1240px; margin:0 auto; padding:0 56px;
+    display:grid; grid-template-columns:0.9fr 1.1fr; gap:80px; align-items:center;
+  }
+  .heritage-art{height:480px; position:relative;}
+  .heritage-copy .eyebrow{margin-bottom:18px;}
+  .heritage-copy h2{font-size:36px; line-height:1.22; margin-bottom:24px; max-width:460px;}
+  .heritage-copy p{font-size:16px; line-height:1.85; color:var(--ink-soft); max-width:460px; margin-bottom:16px;}
+  .heritage-copy .btn-outline-ink{
+    margin-top:20px; background:transparent; color:var(--ink); border:1px solid var(--ink);
+    padding:15px 32px; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; font-weight:500;
+  }
+
+  /* ---------- newsletter ---------- */
+  .newsletter{
+    background:var(--beige-deep); text-align:center;
+    padding:100px 0;
+  }
+  .newsletter h2{font-size:32px; margin-bottom:14px; font-style:italic; font-weight:400;}
+  .newsletter p{color:var(--ink-soft); margin-bottom:36px; font-size:15px;}
+  .nl-form{display:flex; justify-content:center; gap:0; max-width:440px; margin:0 auto;}
+  .nl-form input{
+    flex:1; padding:16px 20px; border:1px solid var(--ink); border-right:none;
+    background:var(--ivory); font-size:14px; font-family:inherit; color:var(--ink);
+  }
+  .nl-form input::placeholder{color:var(--ink-soft);}
+  .nl-form button{
+    padding:16px 30px; background:var(--maroon); color:var(--ivory); border:1px solid var(--maroon);
+    font-size:12px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600;
+  }
+
+  /* ---------- footer ---------- */
+  footer{background:var(--ink); color:#CFC6BA; padding:76px 0 32px;}
+  .footer-top{
+    display:grid; grid-template-columns:1.4fr repeat(5, 0.8fr); gap:40px;
+    padding-bottom:56px; border-bottom:1px solid rgba(207,198,186,0.15);
+  }
+  .footer-brand .logo-word{color:var(--ivory);}
+  .footer-brand p{font-size:13px; line-height:1.7; margin-top:16px; color:#9A9186; max-width:220px;}
+  .footer-col h4{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold-light); margin-bottom:18px; font-weight:600;}
+  .footer-col a{display:block; font-size:13px; color:#CFC6BA; margin-bottom:12px;}
+  .footer-bottom{
+    display:flex; align-items:center; justify-content:space-between; padding-top:28px;
+  }
+  .footer-bottom span{font-size:12px; color:#8A8176;}
+  .socials{display:flex; gap:16px;}
+  .socials svg{width:16px; height:16px; stroke:#CFC6BA;}  
+
+  /* ---------- image support ---------- */
+.coll-card img,
+.prod-image img,
+.artisan-art img,
+.heritage-art img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+
+.coll-card .art,
+.artisan-art,
+.heritage-art{
+  background:var(--beige);
+}
+
+/* ---------- mobile navigation ---------- */
+.nav-toggle{
+  display:none;
+  background:transparent;
+  border:1px solid var(--hair);
+  padding:9px;
+  color:var(--ink);
+}
+
+@media (max-width:1024px){
+  .wrap,
+  .nav-inner,
+  .hero-inner,
+  .artisans-inner,
+  .heritage-inner{
+    padding-left:32px;
+    padding-right:32px;
+  }
+
+  .collections-grid,
+  .products-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+
+  .artisans-inner,
+  .heritage-inner{
+    grid-template-columns:1fr;
+    gap:44px;
+  }
+
+  .artisan-art,
+  .heritage-art{
+    height:360px;
+  }
+
+  .footer-top{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media (max-width:860px){
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:88px;
+    left:0;
+    right:0;
+    z-index:50;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0;
+    padding:10px 32px 24px;
+    background:var(--ivory);
+    border-bottom:1px solid var(--hair);
+    box-shadow:0 18px 40px rgba(42,33,24,0.10);
+  }
+
+  .nav-links.is-open{
+    display:flex;
+  }
+
+  .nav-links a{
+    width:100%;
+    padding:15px 0;
+    font-size:15px;
+    border-bottom:1px solid var(--hair);
+  }
+
+  .nav-links a:last-child{
+    border-bottom:none;
+  }
+
+  .nav-toggle{
+    display:block;
+  }
+
+  .nav-icons{
+    gap:16px;
+  }
+
+  .hero h1{
+    font-size:clamp(38px, 8vw, 58px);
+  }
+
+  .hero-inner{
+    padding:110px 32px 80px;
+  }
+
+  .hero-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .btn-gold,
+  .btn-outline,
+  .btn-maroon,
+  .btn-outline-ink{
+    text-align:center;
+  }
+
+  section{
+    padding:76px 0;
+  }
+
+  .section-head{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:18px;
+  }
+
+  .impact-grid{
+    grid-template-columns:repeat(2, 1fr);
+    gap:34px;
+  }
+
+  .nl-form{
+    flex-direction:column;
+    gap:12px;
+    max-width:100%;
+  }
+
+  .nl-form input,
+  .nl-form button{
+    width:100%;
+    border-right:1px solid var(--ink);
+  }
+}
+
+@media (max-width:560px){
+  .wrap,
+  .nav-inner,
+  .hero-inner,
+  .artisans-inner,
+  .heritage-inner{
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  .collections-grid,
+  .products-grid{
+    grid-template-columns:1fr;
+  }
+
+  .coll-card{
+    height:300px;
+  }
+
+  .prod-image{
+    height:340px;
+  }
+
+  .artisan-art,
+  .heritage-art{
+    height:300px;
+  }
+
+  .impact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-top{
+    grid-template-columns:1fr;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    gap:16px;
+    text-align:center;
+  }
+}
+
+/* form feedback */
+.nl-status{
+  margin-top:16px;
+  font-size:14px;
+  display:none;
+}
+.nl-status.is-success{
+  display:block;
+  color:var(--maroon);
+}
+.nl-status.is-error{
+  display:block;
+  color:var(--maroon-deep);
+}
+
+/* wishlist interaction */
+.wish{
+  border:none;
+}
+.wish svg{
+  transition:fill .2s ease, stroke .2s ease;
+}
+.wish.is-active svg{
+  fill:var(--maroon);
+  stroke:var(--maroon);
+}
+
+.footer-col p{
+  font-size:13px;
+  color:#CFC6BA;
+  margin:0;
+}
+
+.socials a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  border:1px solid rgba(207,198,186,0.28);
+  border-radius:50%;
+  transition:border-color .25s ease, background .25s ease, transform .25s ease;
+}
+
+.socials a:hover{
+  border-color:var(--gold-light);
+  background:rgba(173,138,78,0.16);
+  transform:translateY(-2px);
+}
+
+.socials svg{
+  width:16px;
+  height:16px;
+  stroke:#CFC6BA;
+}
+</style>
+</head>
+<body>
+
+<!-- ============ THREAD DIVIDER (reusable) ============ -->
+<!-- appears between major sections as the signature motif -->
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#home" class="logo">
+      <svg class="logo-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" stroke="#AD8A4E" stroke-width="1"/>
+        <path d="M9 20 C13 12, 17 28, 20 20 C23 12, 27 28, 31 20" stroke="#591622" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-word">Tilla Threads</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#collections">Marketplace</a>
+      <a href="#artisans">Our Artisans</a>
+      <a href="#heritage">Stories</a>
+      <a href="#impact">Impact</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <svg width="22" height="14" viewBox="0 0 22 14" aria-hidden="true">
+        <line x1="0" y1="1" x2="22" y2="1" stroke="currentColor"/>
+        <line x1="0" y1="7" x2="22" y2="7" stroke="currentColor"/>
+        <line x1="0" y1="13" x2="22" y2="13" stroke="currentColor"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home" style="padding:0;">
+  <svg class="hero-pattern" viewBox="0 0 1240 640" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#3E0F17" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#3E0F17" stop-opacity="0.5"/>
+      </linearGradient>
+    </defs>
+    <!-- radiating tilla motif, right side -->
+    <g opacity="0.55">
+      <g transform="translate(980,60)">
+        <path d="M0 260 C 90 40, 160 40, 260 260" stroke="#AD8A4E" stroke-width="1.4" fill="none"/>
+        <path d="M20 260 C 100 70, 160 70, 240 260" stroke="#D6BD8A" stroke-width="1" fill="none" opacity="0.7"/>
+        <path d="M40 260 C 110 100, 150 100, 220 260" stroke="#AD8A4E" stroke-width="1" fill="none" opacity="0.5"/>
+      </g>
+      <g transform="translate(1000,340)">
+        <circle cx="0" cy="0" r="3" fill="#D6BD8A"/>
+        <circle cx="40" cy="20" r="3" fill="#D6BD8A"/>
+        <circle cx="80" cy="0" r="3" fill="#D6BD8A"/>
+        <circle cx="120" cy="20" r="3" fill="#D6BD8A"/>
+        <circle cx="160" cy="0" r="3" fill="#D6BD8A"/>
+        <path d="M0 0 C 20 25, 20 -5, 40 20 C 60 45, 60 -5, 80 0 C 100 25, 100 -5, 120 20 C 140 45, 140 -5, 160 0" stroke="#AD8A4E" stroke-width="1" fill="none" opacity="0.6"/>
+      </g>
+      <g transform="translate(880,420) rotate(-8)">
+        <path d="M0 0 Q 60 -40 120 0 T 240 0" stroke="#AD8A4E" stroke-width="1.2" fill="none" stroke-dasharray="1 9" stroke-linecap="round"/>
+      </g>
+    </g>
+    <!-- floral tilla emblem, centered lower right -->
+    <g transform="translate(1060,190)" opacity="0.85">
+      <circle cx="0" cy="0" r="46" stroke="#AD8A4E" stroke-width="1"/>
+      <g stroke="#D6BD8A" stroke-width="1.3" fill="none">
+        <ellipse cx="0" cy="-24" rx="9" ry="18"/>
+        <ellipse cx="17" cy="-12" rx="9" ry="18" transform="rotate(72 17 -12)"/>
+        <ellipse cx="17" cy="12" rx="9" ry="18" transform="rotate(144 17 12)"/>
+        <ellipse cx="-17" cy="12" rx="9" ry="18" transform="rotate(216 -17 12)"/>
+        <ellipse cx="-17" cy="-12" rx="9" ry="18" transform="rotate(288 -17 -12)"/>
+      </g>
+      <circle cx="0" cy="0" r="6" fill="#AD8A4E"/>
+    </g>
+    <rect x="0" y="0" width="1240" height="640" fill="url(#fade)"/>
+  </svg>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Handcrafted in Amritsar, Punjab</div>
+    <h1>Every thread carries a legacy.</h1>
+    <p>Discover handcrafted Tilla embroidery made by skilled Punjabi artisans, while preserving generations of cultural heritage.</p>
+    <div class="hero-actions">
+      <a href="#marketplace" class="btn-gold">Explore Marketplace</a>
+      <a href="#artisans" class="btn-outline">Meet Our Artisans</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED COLLECTIONS ============ -->
+<section id="collections">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow" style="margin-bottom:12px;">Curated edits</div>
+        <h2>Featured collections</h2>
+      </div>
+      <a href="#marketplace" class="view-all">View all</a>
+    </div>
+    <div class="collections-grid">
+
+      <div class="coll-card">
+        <img
+          class="art"
+          src="https://images.pexels.com/photos/33101418/pexels-photo-33101418.jpeg?auto=compress&cs=tinysrgb&w=900"
+          alt="Close-up of an ornate red and gold Indian bridal lehenga with intricate embroidery">
+        <div class="overlay"><h3>Bridal collection</h3><div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div>
+      </div>
+
+      <div class="coll-card">
+        <img
+          class="art"
+          src="https://images.pexels.com/photos/13192074/pexels-photo-13192074.jpeg"
+          alt="Elegant red and black Indian saree fabric with intricate gold patterns">
+        <div class="overlay"><h3>Luxury saree</h3><div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div>
+      </div>
+
+      <div class="coll-card">
+        <img
+        class="art"
+        src="https://images.pexels.com/photos/14825269/pexels-photo-14825269.jpeg?auto=compress&cs=tinysrgb&w=900"
+        alt="Close-up of intricate gold embroidery on vibrant red traditional Indian fabric">
+        <div class="overlay"><h3>Accessories</h3><div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div>
+      </div>
+
+      <div class="coll-card">
+        <img
+          class="art"
+          src="https://images.pexels.com/photos/15534250/pexels-photo-15534250.jpeg"
+          alt="Traditional Indian red textile with intricate embroidery and decorative patterns">
+        <div class="overlay"><h3>Home decor</h3><div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PRODUCTS ============ -->
+<section style="background:var(--beige); padding-top:100px; padding-bottom:120px;" id="marketplace">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow" style="margin-bottom:12px;">This season</div>
+        <h2>Featured pieces</h2>
+      </div>
+    </div>
+    <div class="products-grid">
+
+      <div class="prod-card">
+        <div class="prod-image">
+         <img
+          src="https://images.pexels.com/photos/8886950/pexels-photo-8886950.jpeg?auto=compress&cs=tinysrgb&w=800"
+          alt="Hands holding intricately embroidered red Indian fabric with gold detailing">
+        </div>
+        <div class="prod-name">Zardozi bridal dupatta</div>
+        <div class="prod-artisan">By Simran Kaur, Amritsar</div>
+        <div class="prod-rating">
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <span>4.9 (58)</span>
+        </div>
+        <div class="prod-bottom"><div class="prod-price">₹18,500</div><a class="add-cart" href="mailto:hello@tillathreads.com?subject=Product enquiry — Tilla Threads">Enquire</a></div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-image">
+         <img
+          src="https://images.pexels.com/photos/31551512/pexels-photo-31551512.jpeg"
+          alt="Detailed gold thread embroidery on red traditional Indian fabric">
+        </div>
+        <div class="prod-name">Gold thread clutch</div>
+        <div class="prod-artisan">By Harpreet Singh, Amritsar</div>
+        <div class="prod-rating">
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <span>5.0 (34)</span>
+        </div>
+        <div class="prod-bottom"><div class="prod-price">₹6,200</div><a class="add-cart" href="mailto:hello@tillathreads.com?subject=Product enquiry — Tilla Threads">Enquire</a></div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-image">
+          <img
+          src="https://images.pexels.com/photos/37975932/pexels-photo-37975932.jpeg?auto=compress&cs=tinysrgb&w=800"
+          alt="Traditional Indian embroidered textile suitable for a heritage table runner">
+        </div>
+        <div class="prod-name">Heritage table runner</div>
+        <div class="prod-artisan">By Amarjeet Kaur, Amritsar</div>
+        <div class="prod-rating">
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <span>4.8 (21)</span>
+        </div>
+        <div class="prod-bottom"><div class="prod-price">₹4,800</div><a class="add-cart" href="mailto:hello@tillathreads.com?subject=Product enquiry — Tilla Threads">Enquire</a></div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-image">
+          <img
+          src="https://images.pexels.com/photos/12656647/pexels-photo-12656647.jpeg?auto=compress&cs=tinysrgb&w=800"
+          alt="Traditional embroidered Punjabi jutti footwear">
+        </div>
+        <div class="prod-name">Tilla jutti, ivory</div>
+        <div class="prod-artisan">By Ravinder Singh, Amritsar</div>
+        <div class="prod-rating">
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <span>4.9 (76)</span>
+        </div>
+        <div class="prod-bottom"><div class="prod-price">₹3,400</div><a class="add-cart" href="mailto:hello@tillathreads.com?subject=Product enquiry — Tilla Threads">Enquire</a></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEET OUR ARTISANS ============ -->
+<section class="artisans" id="artisans">
+  <div class="artisans-inner">
+    <div class="artisan-art">
+      <img
+      src="https://images.pexels.com/photos/31935139/pexels-photo-31935139.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      alt="Artisan hands embroidering fabric with a needle and thread">
+    </div>
+    <div class="artisan-copy">
+      <div class="eyebrow">Our craftspeople</div>
+      <h2>Meet the hands behind every thread</h2>
+      <p>Every purchase directly supports the artisan who made it, and helps keep Punjab's centuries-old embroidery tradition alive for the next generation of Tilla craftspeople.</p>
+      <a href="#heritage" class="btn-maroon">Read their stories</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IMPACT ============ -->
+<section class="impact" id="impact">
+  <div class="wrap">
+    <div class="impact-grid">
+      <div class="impact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+        <div class="impact-num">500+</div>
+        <div class="impact-label">Artisans supported</div>
+      </div>
+      <div class="impact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/></svg>
+        <div class="impact-num">8,000+</div>
+        <div class="impact-label">Products sold</div>
+      </div>
+      <div class="impact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><path d="M3 21V10l9-6 9 6v11"/><path d="M9 21v-7h6v7"/></svg>
+        <div class="impact-num">12</div>
+        <div class="impact-label">Villages connected</div>
+      </div>
+      <div class="impact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><path d="M8 3v4M16 3v4"/><path d="M4 9h16"/><rect x="4" y="5" width="16" height="16" rx="1"/></svg>
+        <div class="impact-num">100%</div>
+        <div class="impact-label">Handmade</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HERITAGE STORY ============ -->
+<section id="heritage">
+  <div class="heritage-inner">
+    <div class="heritage-art">
+      <img
+      src="https://images.pexels.com/photos/5439054/pexels-photo-5439054.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      alt="Traditional Indian textile with intricate gold patterns representing living heritage">
+    </div>
+    <div class="heritage-copy">
+      <div class="eyebrow">A living tradition</div>
+      <h2>Preserving Punjab's living heritage</h2>
+      <p>Tilla embroidery traces back generations in Amritsar, where artisans once wove gold and silver thread into royal garments. Today, the same karchobi frame and hook technique survive in a handful of family workshops, passed down not through manuals but through years spent watching a parent's hands.</p>
+      <p>As machine embroidery has taken over the wider market, many of these artisans have been pushed to the margins, their skill undervalued and underpaid. Tilla Threads exists to change that equation, connecting the makers directly to the people who value what they make.</p>
+      <a href="#artisans" class="btn-outline-ink">Learn more</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="newsletter" style="padding:0 0 0 0;">
+  <div class="wrap" style="padding-top:100px; padding-bottom:100px;">
+    <h2>Stay connected</h2>
+    <p>Artisan stories, new collections, and the occasional invitation — nothing more.</p>
+    <form class="nl-form" id="newsletterForm" novalidate>
+      <input
+        type="email"
+        id="newsletterEmail"
+        name="email"
+        placeholder="name@email.com"
+        aria-label="Email address"
+        required>
+      <button type="submit">Subscribe</button>
+    </form>
+
+    <p class="nl-status" id="newsletterStatus" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-word">Tilla Threads</span>
+        <p>A marketplace connecting authentic Punjabi Tilla embroidery artisans with customers worldwide.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="#collections">Featured collections</a>
+        <a href="#marketplace">Featured pieces</a>
+        <a href="#marketplace">Bridal &amp; accessories</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="#heritage">Our story</a>
+        <a href="#impact">Our impact</a>
+        <a href="#artisans">Meet the makers</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:hello@tillathreads.com">hello@tillathreads.com</a>
+        <a href="tel:+910000000000">+91 00000 00000</a>
+        <p>Amritsar, Punjab, India</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="currentYear">2026</span> Tilla Threads. All rights reserved.</span>
+
+      <div class="socials">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Tilla Threads on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Tilla Threads on Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Tilla Threads on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A5.9 5.9 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile navigation
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  if (navToggle && navLinks) {
+    const closeNav = () => {
+      navLinks.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Open menu');
+    };
+
+    navToggle.addEventListener('click', (event) => {
+      event.stopPropagation();
+
+      const isOpen = navLinks.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeNav);
+    });
+
+    document.addEventListener('click', (event) => {
+      if (
+        window.innerWidth <= 860 &&
+        navLinks.classList.contains('is-open') &&
+        !navLinks.contains(event.target) &&
+        !navToggle.contains(event.target)
+      ) {
+        closeNav();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 860) {
+        closeNav();
+      }
+    });
+  }
+
+  // Wishlist toggle
+  document.querySelectorAll('.wish').forEach(button => {
+    button.setAttribute('aria-label', 'Add to wishlist');
+    button.setAttribute('aria-pressed', 'false');
+
+    button.addEventListener('click', () => {
+      const active = button.classList.toggle('is-active');
+      button.setAttribute('aria-pressed', active ? 'true' : 'false');
+      button.setAttribute('aria-label', active ? 'Remove from wishlist' : 'Add to wishlist');
+    });
+  });
+
+  // Newsletter subscription
+  const newsletterForm = document.getElementById('newsletterForm');
+  const newsletterEmail = document.getElementById('newsletterEmail');
+  const newsletterStatus = document.getElementById('newsletterStatus');
+
+  if (newsletterForm && newsletterEmail && newsletterStatus) {
+    newsletterForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const email = newsletterEmail.value.trim();
+      newsletterStatus.classList.remove('is-success', 'is-error');
+
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        newsletterStatus.textContent = 'Please enter a valid email address.';
+        newsletterStatus.classList.add('is-error');
+        return;
+      }
+
+      const button = newsletterForm.querySelector('button');
+      const originalText = button.textContent;
+
+      button.disabled = true;
+      button.textContent = 'Subscribing…';
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/hello@tillathreads.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            email: email,
+            _subject: 'New newsletter subscription — Tilla Threads'
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error('Subscription failed');
+        }
+
+        newsletterForm.reset();
+        newsletterStatus.textContent = 'Thank you for subscribing. We will be in touch with artisan stories and new collections.';
+        newsletterStatus.classList.add('is-success');
+      } catch (error) {
+        newsletterStatus.textContent = 'Sorry, we could not subscribe you right now. Please email hello@tillathreads.com.';
+        newsletterStatus.classList.add('is-error');
+      } finally {
+        button.disabled = false;
+        button.textContent = originalText;
+      }
+    });
+  }
+
+  const currentYear = document.getElementById('currentYear');
+
+  if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+  }
+</script>
+
+</body>
+</html>
